@@ -1,10 +1,20 @@
+import { Component } from "react"
+import  {Counter}  from "./Counter"
 
+export default class  App extends Component {
 
-function App() {
+ render(){
+  let hide = true;
+  //   if(!hide == false){
+  //     return( )
+  // }
 
   return (
-    "HI"
+    <>
+      <button>Hide / UnHide</button>
+      {/* {hide == true ? <Counter  /> : ""} */}
+      {hide == true && <Counter  />}
+    </>
   )
+ }
 }
-
-export default App
