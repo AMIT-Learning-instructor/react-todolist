@@ -2,11 +2,28 @@ import React from "react";
 
 export  class Counter extends React.Component {
 
-    constructor(){
-        super()
+    constructor(props){
+        console.log("Hi form counter construe");
+        super(props)
         this.state = {
-            counter:0
+            counter:this.props.initialValue
         }
+    }
+
+    componentDidMount(){
+        console.log("Counter componentDidMount ");
+    }
+
+    componentWillUnmount(){
+        console.log("Counter componentWillUnmount ");
+        this.props.setLastCounter(this.state.counter)
+    }
+    componentDidUpdate(){
+        console.log("Counter componentDidUpdate ");
+    }
+    shouldComponentUpdate(){
+        console.log("Counter shouldComponentUpdate ",this.state.counter);
+        return this.state.counter > 5 ;
     }
     render(){
         let name = "youssef";
